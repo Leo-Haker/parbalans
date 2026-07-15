@@ -20,3 +20,8 @@ CREATE TABLE payment (
     own_share_percentage INT NOT NULL DEFAULT 50,
     date DATE NOT NULL
 );
+
+CREATE TABLE account_person (
+    account_id BIGINT,
+    person_id BIGINT
+);
