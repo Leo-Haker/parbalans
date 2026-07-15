@@ -59,4 +59,8 @@ public class Account {
     public void removePerson(Person person) {
         persons.remove(person);
     }
+
+    public int numberOfMembers() {
+        return persons.size();
+    }
 }
