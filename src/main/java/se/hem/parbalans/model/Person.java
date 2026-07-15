@@ -1,9 +1,13 @@
 package se.hem.parbalans.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -23,6 +27,9 @@ public class Person {
     @Email
     @NotBlank
     private String email;
+
+    @ManyToMany(mappedBy = "persons")
+    private List<Account> accounts = new ArrayList<>();
 
     protected Person() {
         // required by JPA
@@ -51,6 +58,18 @@ public class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Account> getAccounts() {
+        return accounts;
+    }
+
+    public void addAccount(Account account) {
+        accounts.add(account);
+    }
+
+    public void removeAccount(Account account) {
+        accounts.remove(account);
     }
 
     @Override
