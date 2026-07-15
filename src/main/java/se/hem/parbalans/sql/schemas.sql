@@ -7,8 +7,6 @@ CREATE TABLE person (
 CREATE TABLE account (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    person1_id BIGINT NOT NULL REFERENCES person(id),
-    person2_id BIGINT NOT NULL REFERENCES person(id)
 );
 
 CREATE TABLE payment (
@@ -19,9 +17,11 @@ CREATE TABLE payment (
     amount NUMERIC(12,2) NOT NULL,
     own_share_percentage INT NOT NULL DEFAULT 50,
     date DATE NOT NULL
+    income BOOLEAN NOT NULL DEFAULT FALSE;
 );
 
 CREATE TABLE account_person (
-    account_id BIGINT,
-    person_id BIGINT
+    account_id BIGINT NOT NULL REFERENCES account(id),
+    person_id BIGINT NOT NULL REFERENCES person(id),
+    PRIMARY KEY (account_id, person_id)
 );
