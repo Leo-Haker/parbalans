@@ -99,6 +99,13 @@ public class Expense {
         this.amount = amount;
     }
 
+    public BigDecimal getOwnAmount() {
+        BigDecimal percetage = BigDecimal.valueOf(ownSharePercentage).divide(BigDecimal.valueOf(100), 4,
+                RoundingMode.HALF_UP);
+        BigDecimal result = amount.multiply(percetage);
+        return income ? result.negate() : result;
+    }
+
     public int getOwnSharePercentage() {
         return ownSharePercentage;
     }
@@ -115,7 +122,7 @@ public class Expense {
         this.date = date;
     }
 
-    public BigDecimal otherPersonShare() {
+    public BigDecimal getSharePerOtherMember() {
         BigDecimal numberOfOtherPersons = BigDecimal.valueOf(account.numberOfMembers() - 1);
         BigDecimal otherShare = BigDecimal.valueOf(100 - ownSharePercentage)
                 .divide(BigDecimal.valueOf(100), 4, RoundingMode.HALF_UP)
@@ -123,9 +130,9 @@ public class Expense {
 
         BigDecimal result = amount.multiply(otherShare);
         if (income)
-            return result.negate();
-        else
             return result;
+        else
+            return result.negate();
     }
 
 }

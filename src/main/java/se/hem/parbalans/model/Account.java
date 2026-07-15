@@ -63,4 +63,8 @@ public class Account {
     public int numberOfMembers() {
         return persons.size();
     }
+
+    public boolean isAccountMember(Person person) {
+        return persons.contains(person);
+    }
 }
