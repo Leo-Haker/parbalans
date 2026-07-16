@@ -102,7 +102,8 @@ public class Expense {
     public BigDecimal getOwnAmount() {
         BigDecimal percetage = BigDecimal.valueOf(ownSharePercentage).divide(BigDecimal.valueOf(100), 4,
                 RoundingMode.HALF_UP);
-        BigDecimal result = amount.multiply(percetage);
+        BigDecimal ownShare = amount.multiply(percetage);
+        BigDecimal result = amount.subtract(ownShare);
         return income ? result.negate() : result;
     }
 
