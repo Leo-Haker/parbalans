@@ -25,6 +25,9 @@ En samlad referens över kommandon som är bra att kunna för det här projektet
 
 # Se bara en specifik dependency, t.ex. postgresql
 ./mvnw dependency:tree | grep -i postgresql
+
+# Pushar om alla tester är godkända
+cd backend && ./mvnw test && cd .. && git push
 ```
 
 ## PostgreSQL / psql
