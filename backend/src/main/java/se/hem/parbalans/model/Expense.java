@@ -104,7 +104,7 @@ public class Expense {
                 RoundingMode.HALF_UP);
         BigDecimal ownShare = amount.multiply(percetage);
         BigDecimal result = amount.subtract(ownShare);
-        return income ? result.negate() : result;
+        return income ? result : result;
     }
 
     public int getOwnSharePercentage() {
