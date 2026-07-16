@@ -1,4 +1,4 @@
-package se.hem.parbalans.model;
+package se.hem.spliteven.model;
 
 import java.util.List;
 import java.util.ArrayList;

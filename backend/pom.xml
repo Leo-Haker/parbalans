@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>se.hem</groupId>
-	<artifactId>parbalans</artifactId>
+	<artifactId>spliteven</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name/>
 	<description/>

@@ -1,8 +1,8 @@
-package se.hem.parbalans;
+package se.hem.spliteven.service;
 
-import se.hem.parbalans.model.Account;
-import se.hem.parbalans.model.Expense;
-import se.hem.parbalans.model.Person;
+import se.hem.spliteven.model.Account;
+import se.hem.spliteven.model.Expense;
+import se.hem.spliteven.model.Person;
 
 import java.math.BigDecimal;
 import java.time.YearMonth;

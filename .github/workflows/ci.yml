@@ -16,7 +16,7 @@ jobs:
         env:
           POSTGRES_USER: minanvandare
           POSTGRES_PASSWORD: balans123
-          POSTGRES_DB: parbalans
+          POSTGRES_DB: spliteven
         ports:
           - 5432:5432
         options: >-
@@ -38,7 +38,7 @@ jobs:
 
       - name: Create database schema
         run: |
-          PGPASSWORD=balans123 psql -h localhost -U minanvandare -d parbalans -f backend/sql/schema.sql
+          PGPASSWORD=balans123 psql -h localhost -U minanvandare -d spliteven -f backend/sql/schema.sql
 
       - name: Run tests
         working-directory: ./backend

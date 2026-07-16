@@ -1,4 +1,4 @@
-# Parbalans – Användbara kommandon
+# SplitEven – Användbara kommandon
 
 En samlad referens över kommandon som är bra att kunna för det här projektet, sorterat efter kategori.
 
@@ -34,13 +34,13 @@ cd backend && ./mvnw test && cd .. && git push
 
 ```bash
 # Ansluta till databasen interaktivt
-psql -h localhost -U minanvandare -d parbalans
+psql -h localhost -U minanvandare -d spliteven
 
 # Köra en hel SQL-fil mot databasen
-psql -h localhost -U minanvandare -d parbalans -f sql/schema.sql
+psql -h localhost -U minanvandare -d spliteven -f sql/schema.sql
 
 # Köra ett enstaka kommando utan att gå in i psql-prompten
-psql -h localhost -U minanvandare -d parbalans -c "\dt"
+psql -h localhost -U minanvandare -d spliteven -c "\dt"
 ```
 
 **Inne i psql-prompten:**
@@ -76,7 +76,7 @@ git push
 git mv gammalt-namn.sql nytt-namn.sql
 
 # Byta remote-URL (t.ex. från https till ssh)
-git remote set-url origin git@github.com:Leo-Haker/parbalans.git
+git remote set-url origin git@github.com:Leo-Haker/spliteven.git
 
 # Se vilken remote som är kopplad
 git remote -v
